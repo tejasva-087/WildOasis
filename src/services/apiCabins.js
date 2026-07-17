@@ -12,12 +12,22 @@ export async function getCabins() {
 }
 
 export async function deleteCabin(id) {
-  const { error } = await supabase.from("cabins").delete().eq("id", id);
+  const { data, error } = await supabase
+    .from("cabins")
+    .delete()
+    .eq("id", id)
+    .select()
+    .single();
 
   if (error) {
     console.error(error);
     throw new error("Cabins could not be deleted.");
   }
+
+  // Extract everything after "cabin-images/"
+  const imagePath = data.image.split("/cabin-images/")[1];
+  console.log(imagePath);
+  await supabase.storage.from("cabin-images").remove([imagePath]);
 
   return null;
 }
