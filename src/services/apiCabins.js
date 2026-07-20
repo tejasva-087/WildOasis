@@ -26,7 +26,6 @@ export async function deleteCabin(id) {
 
   // Extract everything after "cabin-images/"
   const imagePath = data.image.split("/cabin-images/")[1];
-  console.log(imagePath);
   await supabase.storage.from("cabin-images").remove([imagePath]);
 
   return null;

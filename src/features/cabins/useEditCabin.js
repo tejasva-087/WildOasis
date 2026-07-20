@@ -12,7 +12,7 @@ export function useEditCabin() {
       queryClient.invalidateQueries(["cabins"]);
     },
     onError: () => {
-      toast.Error("Cabin could not be edited.");
+      toast.error("Cabin could not be edited.");
     },
   });
 
