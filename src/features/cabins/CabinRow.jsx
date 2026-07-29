@@ -78,7 +78,7 @@ function CabinRow({ cabin }) {
         <div>
           <Modal>
             <Menus.Menu>
-              <Menus.Toggle id={cabinID}></Menus.Toggle>
+              <Menus.Toggle id={cabinID} />
 
               <Menus.List id={cabinID}>
                 {/* DUPLICATE */}

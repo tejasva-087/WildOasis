@@ -31,6 +31,7 @@ const StyledHeader = styled(CommonRow)`
 
 const StyledRow = styled(CommonRow)`
   padding: 1.2rem 2.4rem;
+  overflow: scroll;
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
@@ -92,8 +93,13 @@ function Body({ data, render }) {
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 
+function Footer({ children }) {
+  return <StyledFooter>{children}</StyledFooter>;
+}
+
 Table.Body = Body;
 Table.Header = Header;
 Table.Row = Row;
+Table.Footer = Footer;
 
 export default Table;

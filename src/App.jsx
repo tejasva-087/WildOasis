@@ -15,6 +15,8 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
+import Booking from "./pages/Booking";
+import Checkin from "./pages/Checkin";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +40,9 @@ function App() {
             <Route path="cabins" element={<Cabins />} />
             <Route path="users" element={<User />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="account" element={<Account />} />
+            <Route path="booking/:bookingId" element={<Booking />} />
+            <Route path="checkin/:bookingId" element={<Checkin />} />
             <Route path="account" element={<Account />} />
             <Route path="*" element={<PageNotFound />} />
           </Route>

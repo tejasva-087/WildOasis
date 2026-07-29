@@ -2,10 +2,12 @@ import SortBy from "../../ui/SortBy";
 import Filter from "../../ui/Filter";
 import TableOperations from "../../ui/TableOperations";
 
+const searchParamsToReset = [{ name: "page", value: 1 }];
 function BookingTableOperations() {
   return (
     <TableOperations>
       <Filter
+        searchParamsToReset={searchParamsToReset}
         filterField="status"
         options={[
           { value: "all", label: "All" },
