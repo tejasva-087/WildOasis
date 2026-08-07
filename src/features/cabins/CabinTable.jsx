@@ -12,6 +12,8 @@ function CabinTable() {
 
   if (isLoading) return <Spinner />;
 
+  if (cabins.length === 0) return <p>No cabins could be found</p>;
+
   const filterValue = searchParams.get("discount") || "all";
   const sortBy = searchParams.get("sortBy") || "created_at-asc";
 

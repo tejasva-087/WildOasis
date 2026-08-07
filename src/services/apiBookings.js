@@ -126,5 +126,6 @@ export async function deleteBooking(id) {
     console.error(error);
     throw new Error("Booking could not be deleted");
   }
+
   return data;
 }
