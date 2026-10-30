@@ -23,8 +23,7 @@ import DarkModeProvider from "./context/DarkModeContext";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // staleTime: 5 * 60 * 60 * 1000,
-      staleTime: 0,
+      staleTime: 5 * 60 * 60 * 1000,
     },
   },
 });
